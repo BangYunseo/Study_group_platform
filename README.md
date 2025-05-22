@@ -7,14 +7,12 @@
 ex) 정보처리기사 자격증을 따고자 하는 사람들끼리 스터디 그룹을 생성하고 , 관련된 문제를 생성해서 같은 DB에서 문제를 풀어볼 수 있도록 한다.
 
 ### 🧾기술 스택
-① 프론트엔드 : HTML, CSS, JavaScript, React?
-② 백엔드 : Node.js + Express
-③ DB 부문 : MySQL
+- Frontend : HTML, CSS, JavaScript, React?
+- Backend : Node.js + Express
+- DB : MySQL
 
 ### 기여자
 
 
 ### 협업 방식 
 
-
-추후 내용 추가 예정,,,
