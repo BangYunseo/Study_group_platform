@@ -1,3 +1,5 @@
+// studygroup/client/src/pages/GroupListPage.js
+import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import GroupFilter from "../components/groups/GroupFilter";
 import GroupCard from "../components/groups/GroupCard";
@@ -5,18 +7,21 @@ import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
 import { mockGroups } from "../data/groups"; // 목업 그룹 데이터
 
-const GroupListPage = () => {
-  // 실제로는 필터링 로직, 페이지네이션 등 구현
+import "../styles/layout.css";
 
+const GroupListPage = () => {
   return (
     <MainLayout showSidebar sidebarContent={<GroupFilter />}>
+      {/* 검색 및 제목 섹션 */}
       <div className="section-header">
         <h2>스터디/프로젝트 그룹</h2>
         <div className="board-actions">
           <InputField
             type="text"
             placeholder="그룹 검색..."
-            className="search-input"
+            className="search-input" // search-input 클래스 적용
+            // value={searchTerm}
+            // onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Button variant="secondary" size="small" icon="search">
             검색
@@ -24,14 +29,19 @@ const GroupListPage = () => {
         </div>
       </div>
 
+      {/* 그룹 목록 그리드 */}
       <div className="group-grid">
+        {" "}
+        {/* group-grid 클래스 적용 */}
         {mockGroups.map((group) => (
           <GroupCard key={group.id} group={group} />
         ))}
       </div>
 
-      {/* Pagination (추후 구현) */}
+      {/* Pagination */}
       <div className="pagination">
+        {" "}
+        {/* pagination 클래스 적용 */}
         <Button
           size="small"
           variant="secondary"

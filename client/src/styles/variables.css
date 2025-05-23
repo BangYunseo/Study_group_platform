@@ -1,0 +1,53 @@
+:root {
+    /* 색상 */
+    --color-primary: #007bff;
+    /* 파란색 */
+    --color-secondary: #6c757d;
+    /* 회색 */
+    --color-success: #28a745;
+    /* 초록색 */
+    --color-danger: #dc3545;
+    /* 빨간색 */
+    --color-warning: #ffc107;
+    /* 주황색 */
+    --color-info: #17a2b8;
+    /* 하늘색 */
+    --color-light: #f8f9fa;
+    /* 아주 밝은 회색 */
+    --color-dark: #343a40;
+    /* 아주 어두운 회색 */
+    --color-white: #ffffff;
+
+    /* 텍스트 색상 */
+    --text-color-dark: #212529;
+    --text-color-secondary: #6c757d;
+    --text-color-light: #f8f9fa;
+
+    /* 폰트 */
+    --font-family-base: 'Noto Sans KR', sans-serif;
+    /* 사용자 지정 폰트 */
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.75rem;
+
+    /* 간격 */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* 테두리 */
+    --border-radius-base: 0.25rem;
+    --border-color-base: #dee2e6;
+
+    /* 그림자 */
+    --shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    --shadow-md: 0 .5rem 1rem rgba(0, 0, 0, .15);
+
+    /* 레이아웃 */
+    --header-height: 60px;
+}

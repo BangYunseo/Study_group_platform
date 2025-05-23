@@ -1,10 +1,16 @@
-/* layout.css */
+/* studygroup/client/src/styles/layout.css */
 
 .main-header {
-    background-color: var(--bg-white);
+    /* 기존 헤더 스타일 유지 또는 개선 */
+    background-color: var(--color-white);
     border-bottom: 1px solid var(--border-color-light);
-    padding: 10px 0;
-    box-shadow: var(--box-shadow-sm);
+    padding: 15px 0;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    /* 스크롤 시 상단 고정 */
+    top: 0;
+    z-index: 1000;
+    /* 다른 요소 위에 오도록 */
 }
 
 .main-header .container {
@@ -16,138 +22,168 @@
 .main-header .logo {
     font-size: 24px;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
 .main-header nav ul {
     display: flex;
     gap: 25px;
+    /* 메뉴 항목 간 간격 조정 */
 }
 
-.main-header nav ul li a {
-    color: var(--text-color-medium);
-    font-size: 15px;
+.main-header nav li a {
+    color: var(--text-color-dark);
+    text-decoration: none;
     font-weight: 500;
-    padding: 5px 0;
+    padding-bottom: 5px;
     position: relative;
 }
 
-.main-header nav ul li a::after {
+.main-header nav li a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.main-header nav li a.active::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px;
-    width: 0;
+    bottom: 0;
+    width: 100%;
     height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.2s ease;
+    background-color: var(--color-primary);
 }
 
-.main-header nav ul li a:hover::after,
-.main-header nav ul li a.active::after {
-    width: 100%;
+.main-header nav li a:hover {
+    color: var(--color-primary);
 }
 
-.main-header .user-menu {
+.user-menu {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+    /* 로그인/회원가입 버튼과 아이콘 간 간격 */
 }
 
-.main-header .user-menu .profile-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: #eee;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #888;
-    font-size: 18px;
-    overflow: hidden;
-    /* 프로필 이미지 들어갈 자리 */
+.welcome-message {
+    font-size: 0.9em;
+    color: var(--text-color-medium);
 }
 
-.main-header .user-menu .profile-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.profile-icon {
+    font-size: 1.5em;
+    /* 아이콘 크기 키우기 */
+    color: var(--color-primary);
 }
 
-/* Page Layouts */
+.profile-icon i {
+    cursor: pointer;
+}
+
+
+/* 페이지 전체 래퍼 */
 .page-wrapper {
     display: flex;
-    flex-direction: column;
-    min-height: calc(100vh - 70px);
-    /* 헤더 높이 제외, 푸터 고려 */
-    padding-top: 20px;
-    /* 헤더와 콘텐츠 간 간격 */
-    background-color: var(--bg-light-grey);
+    justify-content: center;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    /* 헤더/푸터 높이 제외 */
+    background-color: var(--color-light);
+    /* 전체 페이지 배경색 */
 }
 
+/* 컨테이너 */
+.container {
+    max-width: 1200px;
+    /* 컨테이너 최대 너비 확장 (원래 1080px에서 변경) */
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* 콘텐츠 영역 (사이드바와 메인 콘텐츠를 감싸는 곳) */
 .content-area {
-    flex-grow: 1;
     display: flex;
     gap: 30px;
-    padding-bottom: 40px;
-    /* 푸터와의 간격 */
+    /* 사이드바와 메인 콘텐츠 간격 */
+    padding: 30px 0;
+    /* 상하 패딩 추가 */
+    align-items: flex-start;
+    /* 사이드바와 메인 콘텐츠 상단 정렬 */
 }
 
+/* 사이드바 */
 .sidebar {
-    flex: 0 0 240px;
-    /* 네이버 카페 좌측 메뉴 폭 */
-    background-color: var(--bg-white);
-    border-radius: 8px;
-    box-shadow: var(--box-shadow-sm);
-    padding: 20px;
-    box-sizing: border-box;
-    height: fit-content;
+    flex-basis: 300px;
+    /* 사이드바 고정 너비 */
+    flex-shrink: 0;
+    /* 줄어들지 않도록 */
+    background-color: var(--color-white);
+    padding: 25px;
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-small);
 }
 
-.sidebar .section-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--text-color-dark);
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #eee;
-}
-
-.sidebar nav ul li {
-    margin-bottom: 5px;
-}
-
-.sidebar nav ul li a {
-    display: block;
-    padding: 10px 12px;
-    color: var(--text-color-medium);
-    font-size: 14px;
-    border-radius: 4px;
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.sidebar nav ul li a:hover,
-.sidebar nav ul li a.active {
-    background-color: #e6f7ed;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
+/* 메인 콘텐츠 영역 */
 .main-content {
     flex-grow: 1;
-    background-color: var(--bg-white);
-    border-radius: 8px;
-    box-shadow: var(--box-shadow-sm);
+    background-color: var(--color-white);
     padding: 30px;
+    /* 메인 콘텐츠 내부 패딩 */
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-small);
 }
 
-/* Footer */
+/* 푸터 */
 .main-footer {
-    background-color: #333;
-    color: #bbb;
-    padding: 20px 0;
+    /* 푸터 스타일 */
+    background-color: var(--color-dark);
+    color: var(--color-light);
     text-align: center;
-    font-size: 13px;
-    margin-top: auto;
-    /* 페이지 하단에 붙도록 */
+    padding: 20px 0;
+    font-size: 0.9em;
+    min-height: var(--footer-height);
 }
+
+/* 반응형 디자인 */
+@media (max-width: 992px) {
+    .content-area {
+        flex-direction: column;
+        /* 작은 화면에서 세로로 쌓이도록 */
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .sidebar {
+        flex-basis: auto;
+        /* 너비 자동 */
+        width: 100%;
+        /* 전체 너비 차지 */
+    }
+
+    .main-content {
+        padding: 20px;
+        /* 작은 화면에서 패딩 조절 */
+    }
+
+    .main-header nav ul {
+        gap: 15px;
+        /* 작은 화면 메뉴 간격 조절 */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-header .user-menu {
+        margin-top: 10px;
+    } }

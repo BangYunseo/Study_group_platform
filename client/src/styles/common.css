@@ -1,4 +1,14 @@
-/* Common Styles */
+.text-center {
+    text-align: center;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.p-md {
+    padding: var(--spacing-md);
+}
 
 .container {
     max-width: 1080px;

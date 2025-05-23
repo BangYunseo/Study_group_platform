@@ -1,6 +1,19 @@
-/* Global Styles (전역 CSS) */
-
-* {
+:root {
+  --color-primary: #4a90e2;
+  /* 예시 메인 색상 */
+  --text-color-dark: #333333;
+  --font-family-base: 'Arial', sans-serif;
+  /* 원하는 기본 폰트 */
+  --spacing-md: 16px;
+  --border-radius-base: 8px;
+  --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --header-height: 60px;
+  /* MainLayout에서 사용할 수 있는 변수 */
+  /* 기타 전역 변수 */
+}
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -13,27 +26,29 @@ body,
 }
 
 body {
-  font-family: 'Malgun Gothic', '맑은 고딕', 'Apple SD Gothic Neo', sans-serif;
-  background-color: #f7f7f7;
-  /* 배경색 */
-  color: #333;
-  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color-dark);
+  background-color: #f0f2f5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+  color: var(--color-primary);
+    text-decoration: none;
 }
 
-ul {
+ul,
+ol {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Variables (네이버 카페 테마 색상 및 공통 값) */
 :root {
   --primary-color: #03c75a;
   /* 네이버 그린 */
@@ -57,11 +72,10 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--text-color-dark);
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
+    margin-top: 0;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color-dark);
+  }
 
 p {
   margin-bottom: 10px;
