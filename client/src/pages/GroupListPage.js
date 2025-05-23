@@ -1,11 +1,10 @@
-// studygroup/client/src/pages/GroupListPage.js
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import GroupFilter from "../components/groups/GroupFilter";
 import GroupCard from "../components/groups/GroupCard";
 import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
-import { mockGroups } from "../data/groups"; // 목업 그룹 데이터
+import { mockGroups } from "../data/groups";
 
 import "../styles/layout.css";
 
@@ -19,9 +18,7 @@ const GroupListPage = () => {
           <InputField
             type="text"
             placeholder="그룹 검색..."
-            className="search-input" // search-input 클래스 적용
-            // value={searchTerm}
-            // onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-input"
           />
           <Button variant="secondary" size="small" icon="search">
             검색
