@@ -1,0 +1,28 @@
+# Bytecode 파일
+__pycache__/
+*.py[cod]
+*.so
+
+# 가상환경
+venv/
+ENV/
+env/
+.venv/
+
+# SQLite DB
+*.sqlite3
+db.sqlite3
+
+# Django static/media
+/static/
+/media/
+
+# VSCode 설정
+.vscode/
+
+# 환경 설정
+*.env
+.env
+
+# Mac OS, 기타
+.DS_Store

@@ -1,0 +1,10 @@
+# ---------------------------
+# requirements.txt
+# ---------------------------
+# Django>=4.2
+# djangorestframework>=3.14
+# djangorestframework-simplejwt>=5.2
+# django-filter>=23.5
+# mysqlclient>=2.2
+# psycopg2-binary   # PostgreSQL 사용 시
+# Pillow            # 이미지 필드
