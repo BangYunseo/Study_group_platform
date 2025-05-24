@@ -1,13 +1,11 @@
-// studygroup/client/src/pages/GroupDetailPage.js
-import React from "react";
 import { useParams, Link } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Button from "../components/common/Button";
-import { getGroupById } from "../data/groups"; // 목업 그룹 데이터
+import { getGroupById } from "../data/groups";
 
 const GroupDetailPage = () => {
-  const { id } = useParams(); // URL 파라미터에서 그룹 ID 가져오기
-  const group = getGroupById(id); // 목업 데이터에서 그룹 정보 가져오기
+  const { id } = useParams();
+  const group = getGroupById(id);
 
   if (!group) {
     return (

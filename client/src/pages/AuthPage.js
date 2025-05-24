@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 const AuthPage = () => {
   const [isRegisterMode, setIsRegisterMode] = useState(false);
-  // false는 로그인, true는 회원가입
+  // false는 로그인
+  // true는 회원가입
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

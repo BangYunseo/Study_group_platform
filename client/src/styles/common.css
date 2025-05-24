@@ -16,7 +16,6 @@
     padding: 0 20px;
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -62,7 +61,6 @@
     padding: 8px;
     font-size: 16px;
     width: auto;
-    /* 아이콘 버튼 크기 유연하게 */
     height: auto;
 }
 
@@ -71,7 +69,6 @@
     font-size: 13px;
 }
 
-/* Form Elements */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -104,7 +101,6 @@ select:focus {
     font-weight: bold;
 }
 
-/* Tags */
 .tag {
     display: inline-block;
     padding: 4px 8px;
@@ -116,12 +112,10 @@ select:focus {
 
 .tag.primary-tag {
     background-color: #e6f7ed;
-    /* 네이버 연두색 계열 */
     color: var(--primary-color);
     font-weight: bold;
 }
 
-/* Status Badges */
 .status {
     font-size: 13px;
     padding: 4px 8px;
@@ -137,10 +131,8 @@ select:focus {
 .status.completed {
     background-color: #f7e6e6;
     color: #dc3545;
-    /* 빨간색 */
 }
 
-/* Section Headers */
 .section-header {
     display: flex;
     justify-content: space-between;

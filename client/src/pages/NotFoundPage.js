@@ -1,5 +1,3 @@
-// studygroup/client/src/pages/NotFoundPage.js
-import React from "react";
 import MainLayout from "../layouts/MainLayout";
 
 const NotFoundPage = () => {

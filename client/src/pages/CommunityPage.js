@@ -1,13 +1,10 @@
-// studygroup/client/src/pages/CommunityPage.js
-import React from "react";
 import MainLayout from "../layouts/MainLayout";
 import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
 import PostListItem from "../components/posts/PostListItem";
-import { mockPosts } from "../data/posts"; // 목업 게시물 데이터
+import { mockPosts } from "../data/posts";
 
 const CommunityPage = () => {
-  // 실제로는 게시판 타입(전체/그룹 내)에 따라 게시물 필터링
   const filteredPosts = mockPosts.filter((post) => post.groupId === null); // 일단 전체 게시판만 표시
 
   return (

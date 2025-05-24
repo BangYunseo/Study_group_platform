@@ -1,16 +1,11 @@
-/* studygroup/client/src/styles/layout.css */
-
 .main-header {
-    /* 기존 헤더 스타일 유지 또는 개선 */
     background-color: var(--color-white);
     border-bottom: 1px solid var(--border-color-light);
     padding: 15px 0;
     box-shadow: var(--shadow-sm);
     position: sticky;
-    /* 스크롤 시 상단 고정 */
     top: 0;
     z-index: 1000;
-    /* 다른 요소 위에 오도록 */
 }
 
 .main-header .container {
@@ -29,7 +24,6 @@
 .main-header nav ul {
     display: flex;
     gap: 25px;
-    /* 메뉴 항목 간 간격 조정 */
 }
 
 .main-header nav li a {
@@ -63,7 +57,6 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    /* 로그인/회원가입 버튼과 아이콘 간 간격 */
 }
 
 .welcome-message {
@@ -73,7 +66,6 @@
 
 .profile-icon {
     font-size: 1.5em;
-    /* 아이콘 크기 키우기 */
     color: var(--color-primary);
 }
 
@@ -81,63 +73,46 @@
     cursor: pointer;
 }
 
-
-/* 페이지 전체 래퍼 */
 .page-wrapper {
     display: flex;
     justify-content: center;
     width: 100%;
     min-height: calc(100vh - var(--header-height) - var(--footer-height));
-    /* 헤더/푸터 높이 제외 */
     background-color: var(--color-light);
-    /* 전체 페이지 배경색 */
 }
 
-/* 컨테이너 */
 .container {
     max-width: 1200px;
-    /* 컨테이너 최대 너비 확장 (원래 1080px에서 변경) */
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
 }
 
-/* 콘텐츠 영역 (사이드바와 메인 콘텐츠를 감싸는 곳) */
 .content-area {
     display: flex;
     gap: 30px;
-    /* 사이드바와 메인 콘텐츠 간격 */
     padding: 30px 0;
-    /* 상하 패딩 추가 */
     align-items: flex-start;
-    /* 사이드바와 메인 콘텐츠 상단 정렬 */
 }
 
-/* 사이드바 */
 .sidebar {
     flex-basis: 300px;
-    /* 사이드바 고정 너비 */
     flex-shrink: 0;
-    /* 줄어들지 않도록 */
     background-color: var(--color-white);
     padding: 25px;
     border-radius: var(--border-radius-base);
     box-shadow: var(--shadow-small);
 }
 
-/* 메인 콘텐츠 영역 */
 .main-content {
     flex-grow: 1;
     background-color: var(--color-white);
     padding: 30px;
-    /* 메인 콘텐츠 내부 패딩 */
     border-radius: var(--border-radius-base);
     box-shadow: var(--shadow-small);
 }
 
-/* 푸터 */
 .main-footer {
-    /* 푸터 스타일 */
     background-color: var(--color-dark);
     color: var(--color-light);
     text-align: center;
@@ -146,30 +121,24 @@
     min-height: var(--footer-height);
 }
 
-/* 반응형 디자인 */
 @media (max-width: 992px) {
     .content-area {
         flex-direction: column;
-        /* 작은 화면에서 세로로 쌓이도록 */
         align-items: stretch;
         gap: 20px;
     }
 
     .sidebar {
         flex-basis: auto;
-        /* 너비 자동 */
         width: 100%;
-        /* 전체 너비 차지 */
     }
 
     .main-content {
         padding: 20px;
-        /* 작은 화면에서 패딩 조절 */
     }
 
     .main-header nav ul {
         gap: 15px;
-        /* 작은 화면 메뉴 간격 조절 */
     }
 }
 

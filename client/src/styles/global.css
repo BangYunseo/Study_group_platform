@@ -1,15 +1,11 @@
 :root {
-  --color-primary: #4a90e2;
-  /* 예시 메인 색상 */
+  --color-primary: #03C75A;
   --text-color-dark: #333333;
   --font-family-base: 'Arial', sans-serif;
-  /* 원하는 기본 폰트 */
   --spacing-md: 16px;
   --border-radius-base: 8px;
   --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.08);
   --header-height: 60px;
-  /* MainLayout에서 사용할 수 있는 변수 */
-  /* 기타 전역 변수 */
 }
 *,
 *::before,
@@ -51,9 +47,7 @@ ol {
 
 :root {
   --primary-color: #03c75a;
-  /* 네이버 그린 */
   --secondary-color: #02b350;
-  /* 진한 네이버 그린 */
   --text-color-dark: #333;
   --text-color-medium: #555;
   --text-color-light: #777;
@@ -65,7 +59,6 @@ ol {
   --box-shadow-md: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-/* Base Styles */
 h1,
 h2,
 h3,

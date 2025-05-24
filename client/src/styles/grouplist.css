@@ -1,0 +1,115 @@
+.group-list-page-container {
+    padding: 30px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--border-color-light);
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: var(--text-color-dark);
+    font-weight: 500;
+}
+
+.board-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-input {
+    width: 280px;
+}
+.group-filter-section {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    background-color: var(--bg-white);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--box-shadow-sm);
+}
+
+.group-filter-section h3 {
+    font-size: 1.2em;
+    color: var(--text-color-dark);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color-light);
+    padding-bottom: var(--spacing-sm);
+}
+
+.group-filter-section label {
+    display: block;
+    font-size: 0.9em;
+    color: var(--text-color-medium);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.group-filter-section select,
+.group-filter-section input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color-medium);
+    border-radius: var(--border-radius-base);
+    font-size: 0.9em;
+    margin-bottom: var(--spacing-md);
+    background-color: var(--bg-white);
+}
+
+.group-filter-section button {
+    width: 100%;
+    margin-top: var(--spacing-sm);
+}
+
+.create-group-btn {
+    width: 100%;
+    margin-top: 20px;
+    background-color: var(--color-success);
+    border-color: var(--color-success);
+    color: var(--color-white);
+}
+
+.create-group-btn:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+.group-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color-light);
+}
+
+.pagination .btn {
+    min-width: 35px;
+    height: 35px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination .btn.active {
+    font-weight: bold;
+}
+
+.pagination .prev-next i {
+    margin: 0;
+}

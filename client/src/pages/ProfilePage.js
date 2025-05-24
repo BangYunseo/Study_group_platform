@@ -1,12 +1,12 @@
 // studygroup/client/src/pages/ProfilePage.js
 import React from "react";
 import MainLayout from "../layouts/MainLayout";
-import ProfileForm from "../components/users/ProfileForm"; // ProfileForm 컴포넌트 임포트
-import { getUserById } from "../data/users"; // 목업 유저 데이터
+import ProfileForm from "../components/users/ProfileForm";
+import { getUserById } from "../data/users";
 
 const ProfilePage = () => {
-  // 실제로는 로그인한 유저 정보를 가져와야 합니다.
-  const currentUser = getUserById("user-1"); // 임시로 김철수 유저 정보 사용
+  // 로그인 유저 정보
+  const currentUser = getUserById("user-1");
 
   if (!currentUser) {
     return (
