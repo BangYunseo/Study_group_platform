@@ -21,7 +21,7 @@ function App() {
         <Route path="/groups/:id" element={<GroupDetailPage />} />{" "}
         <Route path="/materials" element={<MaterialPage />} />
         <Route path="/community" element={<CommunityPage />} />
-        <Route path="/community/:id" element={<PostDetailPage />} />{" "}
+        <Route path="/community/post/:id" element={<PostDetailPage />} />{" "}
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="*" element={<NotFoundPage />} />{" "}
       </Routes>
