@@ -1,5 +1,4 @@
 from rest_framework import generics, permissions
-from django.contrib.contenttypes.models import ContentType
 from .models import Comment
 from .serializers import CommentSerializer
 
@@ -9,14 +8,16 @@ class CommentListCreateView(generics.ListCreateAPIView):
 
     def get_queryset(self):
         post_type = self.request.query_params.get("post_type")
-        object_id = self.request.query_params.get("post_id")
-        if post_type and object_id:
-            ctype = ContentType.objects.get(model=post_type)
-            return Comment.objects.filter(content_type=ctype, object_id=object_id).select_related("user")
+        post_id   = self.request.query_params.get("post_id")
+        if post_type and post_id:
+            # 모델의 필드명(post_type, post_id)으로 필터링
+            return Comment.objects.filter(
+                post_type=post_type,
+                post_id=post_id
+            ).select_related("author")
         return Comment.objects.none()
 
     def perform_create(self, serializer):
-        post_type = self.request.data.get("post_type")
-        object_id = self.request.data.get("post_id")
-        ctype = ContentType.objects.get(model=post_type)
-        serializer.save(user=self.request.user, content_type=ctype, object_id=object_id)
+        # validated_data 에는 post_type, post_id, content 만 들어 있으므로
+        # author 만 추가로 지정해 주면 됩니다.
+        serializer.save(author=self.request.user)

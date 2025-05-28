@@ -7,6 +7,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "changeme")
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
 ROOT_URLCONF = "config.urls"
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -75,10 +76,23 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=14),
 }
 
+# ------------------
+# MySQL Configuration
+# ------------------
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',      # MySQL 백엔드
+        'NAME': 'study_group',                     # 위에서 만든 DB 이름
+        'USER': 'root',                         # MySQL 사용자
+        'PASSWORD': 'dldbsxo1@#',                     # MySQL 비밀번호
+        'HOST': '127.0.0.1',                       # 보통은 localhost
+        'PORT': '3306',                            # 기본 포트
+        "OPTIONS": {
+            'charset': 'utf8mb4',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'auth_plugin': 'mysql_native_password',
+        },
+
     }
 }
 
