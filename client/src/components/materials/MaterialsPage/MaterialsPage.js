@@ -27,7 +27,7 @@ const MaterialsPage = () => {
   return (
     <MainLayout>
       <div className="materials-main-container">
-        <h1 className="page-title">스터디 자료 카테고리</h1>
+        <h1 className="page-title">스터디 자료</h1>
 
         <div className="category-grid">
           {categories.map((category) => (
