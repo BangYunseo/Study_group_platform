@@ -1,5 +1,4 @@
 import MainLayout from "../layouts/MainLayout";
-import GroupFilter from "../components/groups/GroupFilter";
 import GroupCard from "../components/groups/GroupCard";
 import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
@@ -10,12 +9,10 @@ import "../styles/groupcard.css";
 
 const GroupListPage = () => {
   return (
-    <MainLayout showSidebar sidebarContent={<GroupFilter />}>
-      {/* 전체 페이지 콘텐츠를 감싸는 컨테이너 추가 (선택 사항) */}
+    <MainLayout>
       <div className="group-list-page-container">
-        {/* 검색 및 제목 섹션 */}
         <div className="section-header">
-          <h2>스터디/프로젝트 그룹</h2>
+          <h2>그룹 탐색</h2>
           <div className="board-actions">
             <InputField
               type="text"
