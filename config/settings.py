@@ -81,18 +81,18 @@ SIMPLE_JWT = {
 # ------------------
 # MySQL Configuration
 # ------------------
-DATABASES = {
+ATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',      # MySQL 백엔드
         'NAME': 'study_group',                     # 위에서 만든 DB 이름
         'USER': 'root',                         # MySQL 사용자
-        'PASSWORD': '',                     # MySQL 비밀번호
+        'PASSWORD': 'Qlalfqjsgh!23',                     # MySQL 비밀번호
         'HOST': '127.0.0.1',                       # 보통은 localhost
         'PORT': '3306',                            # 기본 포트
         "OPTIONS": {
             'charset': 'utf8mb4',
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'auth_plugin': 'mysql_native_password',
+            # 'auth_plugin': 'mysql_native_password',
         },
 
     }
