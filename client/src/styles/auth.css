@@ -52,3 +52,19 @@
 .social.kakao i.fa-comment {
     margin-right: 8px;
 }
+
+.auth-switch .link-style-button {
+    background: none; 
+    border: none;     
+    padding: 0;    
+    color: #007bff; 
+    text-decoration: underline;
+    cursor: pointer; 
+    font-size: inherit; 
+    font-family: inherit; 
+}
+
+.auth-switch .link-style-button:hover {
+    color: #0056b3; 
+    text-decoration: none;
+}
