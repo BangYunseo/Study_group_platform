@@ -81,7 +81,7 @@ SIMPLE_JWT = {
 # ------------------
 # MySQL Configuration
 # ------------------
-ATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',      # MySQL 백엔드
         'NAME': 'study_group',                     # 위에서 만든 DB 이름
