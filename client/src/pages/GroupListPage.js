@@ -8,7 +8,7 @@ import "../styles/grouplist.css";
 const GroupListPage = () => {
   return (
     <MainLayout>
-      <div className="group-list-page-container">
+      <div className="group-list-container">
         <div className="section-header">
           <h2>그룹 탐색</h2>
           <div className="board-actions">
