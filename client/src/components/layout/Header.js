@@ -1,13 +1,10 @@
-/* 헤더 */
-
 import { Link, useLocation } from "react-router-dom";
 import Button from "../common/Button";
 
 const Header = () => {
   const location = useLocation();
 
-  const isLoggedIn = false; // 로그인 상태 관리
-
+  const isLoggedIn = false; 
   return (
     <header className="main-header">
       <div className="container">
