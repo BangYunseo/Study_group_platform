@@ -1,10 +1,13 @@
+import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import Button from "../common/Button";
+import Button from "../Button";
+
+import "./Header.css";
 
 const Header = () => {
   const location = useLocation();
 
-  const isLoggedIn = false; 
+  const isLoggedIn = false;
   return (
     <header className="main-header">
       <div className="container">

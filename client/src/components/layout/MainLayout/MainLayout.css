@@ -1,0 +1,62 @@
+/* client/src/components/layout/MainLayout/MainLayout.css */
+
+/* MainLayout.js에서 사용하는 클래스명에 맞게 조정 */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* Header와 Footer의 height를 CSS 변수로 정의했다면 사용 */
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    background-color: var(--color-light);
+}
+
+/* .container는 전역으로 많이 쓰일 수 있으므로 src/styles/global.css나 common.css로 옮기는 것을 권장 */
+/* 현재는 일단 여기에 두어도 동작은 합니다. */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.content-area {
+    display: flex;
+    gap: 30px;
+    padding: 30px 0;
+    align-items: flex-start;
+}
+
+.sidebar {
+    flex-basis: 300px;
+    flex-shrink: 0;
+    background-color: var(--color-white);
+    padding: 25px;
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-small);
+}
+
+.main-content {
+    flex-grow: 1;
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-small);
+}
+
+/* 미디어 쿼리도 MainLayout 관련 부분만 옮겨옴 */
+@media (max-width: 992px) {
+    .content-area {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    .sidebar {
+        flex-basis: auto;
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+}

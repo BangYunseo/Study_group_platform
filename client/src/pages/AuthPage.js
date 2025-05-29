@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../components/layout/MainLayout/MainLayout";
 import { getUserByEmail, mockUsers } from "../data/users";
-import AuthForm from "../components/auth/AuthForm";
+import AuthForm from "../components/auth/AuthForm/AuthForm";
 import "../styles/auth.css";
 import { useNavigate } from "react-router-dom";
 

@@ -1,5 +1,5 @@
-import InputField from "../common/InputField";
-import Button from "../common/Button";
+import InputField from "../../common/InputField";
+import Button from "../../common/Button";
 
 const AuthForm = ({
   isRegisterMode,
@@ -68,7 +68,7 @@ const AuthForm = ({
         <Button
           className="social google"
           style={{ width: "100%", marginBottom: "10px" }}
-          icon="google"
+          icon="Google"
         >
           Google
         </Button>

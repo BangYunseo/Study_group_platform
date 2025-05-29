@@ -64,7 +64,7 @@ export const mockPosts = [
   },
   {
     id: "3",
-    groupId: "group-1", 
+    groupId: "group-1",
     title: "[정보처리기사 스터디] 이번 주 진도 공지 (6/1 ~ 6/7)",
     author: { id: "user-1", nickname: "김철수" },
     createdAt: "2024.05.25",

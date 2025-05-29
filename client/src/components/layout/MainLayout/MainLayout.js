@@ -1,6 +1,8 @@
-import Header from "../components/layout/Header";
-import Footer from "../components/layout/Footer";
-import "../styles/layout.css"; // 레이아웃 스타일
+import React from "react";
+import Header from "../../../components/common/Header/Header";
+import Footer from "../../../components/common/Footer/Footer";
+
+import "./MainLayout.css";
 
 const MainLayout = ({
   children,

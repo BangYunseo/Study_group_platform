@@ -1,0 +1,100 @@
+/* client/src/components/common/Header/Header.css */
+
+.main-header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--border-color-light);
+    padding: 15px 0;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    /* 이 .container는 Header 컴포넌트 내의 div에 적용 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.main-header nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-header nav li a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.main-header nav li a.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.main-header nav li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-primary);
+}
+
+.main-header nav li a:hover {
+    color: var(--color-primary);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-message {
+    font-size: 0.9em;
+    color: var(--text-color-medium);
+}
+
+.profile-icon {
+    font-size: 1.5em;
+    color: var(--color-primary);
+}
+
+.profile-icon i {
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .main-header nav ul {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .container {
+        /* .main-header .container는 Header.js에 있습니다. */
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main-header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .user-menu {
+        margin-top: 10px;
+    }
+}

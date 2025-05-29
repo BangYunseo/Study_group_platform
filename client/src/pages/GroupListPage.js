@@ -1,4 +1,4 @@
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../components/layout/MainLayout/MainLayout";
 import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
 import { mockGroups } from "../data/groups";
@@ -33,12 +33,18 @@ const GroupListPage = () => {
         <div className="group-table-body">
           {mockGroups.map((group) => (
             <div
-              className={`group-table-row ${group.status === '모집완료' ? 'status-completed' : ''}`}
+              className={`group-table-row ${
+                group.status === "모집완료" ? "status-completed" : ""
+              }`}
               key={group.id}
             >
               <div className="row-item item-title-column">
                 <div className="group-title-card">
-                  <span className={`group-status-badge status-${group.status === '모집중' ? 'recruiting' : 'completed'}`}>
+                  <span
+                    className={`group-status-badge status-${
+                      group.status === "모집중" ? "recruiting" : "completed"
+                    }`}
+                  >
                     {group.status}
                   </span>
                   <a href={`/groups/${group.id}`} className="group-name-link">
@@ -46,14 +52,21 @@ const GroupListPage = () => {
                   </a>
                   <p className="group-description">{group.description}</p>
                   <div className="group-tags">
-                    {group.tags && group.tags.map(tag => (
-                      <span key={tag} className="group-tag-item">#{tag}</span>
-                    ))}
+                    {group.tags &&
+                      group.tags.map((tag) => (
+                        <span key={tag} className="group-tag-item">
+                          #{tag}
+                        </span>
+                      ))}
                   </div>
                 </div>
               </div>
-              <span className="row-item item-leader-column">{group.leader.nickname}</span>
-              <span className="row-item item-date-column">{group.startDate}</span>
+              <span className="row-item item-leader-column">
+                {group.leader.nickname}
+              </span>
+              <span className="row-item item-date-column">
+                {group.startDate}
+              </span>
               <span className="row-item item-members-column">
                 <span className="current-members">{group.currentMembers}</span>/
                 <span className="total-members">{group.totalMembers}</span>명
@@ -62,10 +75,10 @@ const GroupListPage = () => {
               <span className="row-item item-join-column">
                 <Button
                   small
-                  variant={group.status === '모집중' ? 'primary' : 'secondary'}
-                  disabled={group.status !== '모집중'}
+                  variant={group.status === "모집중" ? "primary" : "secondary"}
+                  disabled={group.status !== "모집중"}
                 >
-                  {group.status === '모집중' ? '참여' : '마감'}
+                  {group.status === "모집중" ? "참여" : "마감"}
                 </Button>
               </span>
             </div>

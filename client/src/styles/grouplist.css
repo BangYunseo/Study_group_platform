@@ -107,7 +107,9 @@
 .group-name-link:hover {
     color: var(--color-primary);
 }
-
+.group-table-row.status-completed .group-name-link:hover {
+    color: var(--color-danger);
+}
 .group-description {
     font-size: 0.85em;
     color: var(--text-color-medium);

@@ -1,4 +1,4 @@
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../components/layout/MainLayout/MainLayout";
 import Button from "../components/common/Button";
 import InputField from "../components/common/InputField";
 import PostListItem from "../components/posts/PostListItem";
