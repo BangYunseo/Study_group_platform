@@ -1,3 +1,44 @@
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-header h2 {
+    font-size: 2em;
+    margin: 0;
+    color: var(--text-color-dark);
+    white-space: nowrap;
+}
+
+.board-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex-grow: 1;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.create-group-button {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    padding: 8px 15px;
+    border-radius: var(--border-radius-small);
+    white-space: nowrap;
+}
+
+.create-group-button:hover {
+    background-color: var(--color-green-dark); }
+
+
 .group-table-header {
     display: grid;
     grid-template-columns: 2fr 100px 100px 80px 80px; /* 스터디명(가변), 리더, 기간, 인원, 참여 컬럼 정의 */
@@ -16,6 +57,7 @@
 .group-table-header .header-item {
     text-align: center;
 }
+
 .group-table-header .item-title-column {
     text-align: left;
 }
@@ -33,7 +75,6 @@
     transition: background-color 0.2s ease-in-out;
 }
 
-
 .group-table-row.status-completed:hover {
     background-color: var(--color-danger-light); 
     cursor: pointer;
@@ -43,7 +84,6 @@
      background-color: #f5f5f5;
     cursor: pointer;
 }
-
 
 .group-table-row .row-item {
     padding: 0 5px;
@@ -58,10 +98,11 @@
 }
 
 .group-list-container {
-    max-width: 1000px; 
-    margin: 0 auto;   
-    padding: 20px;    
-    box-sizing: border-box;
+    padding: 30px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-base);
+    box-shadow: var(--shadow-small);
+    margin-bottom: 30px;
 }
 
 .group-title-card {
@@ -104,12 +145,18 @@
     font-size: 1.05em;
     transition: color 0.2s ease-in-out;
 }
+
 .group-name-link:hover {
     color: var(--color-primary);
+}
+.group-table-row.status-completed .group-name-link {
+    color: var(--text-color-light);
+    text-decoration: line-through;
 }
 .group-table-row.status-completed .group-name-link:hover {
     color: var(--color-danger);
 }
+
 .group-description {
     font-size: 0.85em;
     color: var(--text-color-medium);
@@ -142,6 +189,7 @@
 .group-table-row .item-members-column {
     font-weight: bold;
 }
+
 .group-table-row .item-members-column .current-members {
     color: var(--color-primary);
 }
@@ -158,6 +206,7 @@
     border-color: var(--color-primary);
     color: var(--color-white);
 }
+
 .group-table-row .item-join-column .button[variant="primary"]:hover {
     background-color: #218838; 
     border-color: #1e7e34;

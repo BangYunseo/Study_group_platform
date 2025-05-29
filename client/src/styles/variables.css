@@ -30,8 +30,15 @@
     --border-radius-base: 0.25rem;
     --border-color-base: #dee2e6;
 
+    --border-color-light: #dee2e6;
     --shadow-sm: 0 .125rem .25rem rgba(0, 0, 0, .075);
-    --shadow-md: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    --shadow-small: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+    --shadow-base: 0 1rem 3rem rgba(0, 0, 0, .175);
+    --shadow-xl: 0 1rem 3rem rgba(0, 0, 0, .175);
 
-    --header-height: 60px;
+    --border-radius-small: 4px;
+    --border-radius-base: 8px;
+    
+    --header-height: 70px;
+    --footer-height: 60px;
 }
