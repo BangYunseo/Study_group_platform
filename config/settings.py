@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',      # MySQL 백엔드
         'NAME': 'study_group',                     # 위에서 만든 DB 이름
         'USER': 'root',                         # MySQL 사용자
-        'PASSWORD': 'dldbsxo1@#',                     # MySQL 비밀번호
+        'PASSWORD': '',                     # MySQL 비밀번호
         'HOST': '127.0.0.1',                       # 보통은 localhost
         'PORT': '3306',                            # 기본 포트
         "OPTIONS": {

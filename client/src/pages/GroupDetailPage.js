@@ -18,8 +18,7 @@ const GroupDetailPage = () => {
     );
   }
 
-  // 현재 사용자 및 그룹 리더 여부 (임시)
-  const currentUserIsLeader = group.leader.id === "user-1"; // 김철수 (임시)
+  const currentUserIsLeader = group.leader.id === "user-1";
 
   return (
     <MainLayout>
@@ -31,7 +30,7 @@ const GroupDetailPage = () => {
               그룹 참여 요청
             </Button>
           )}
-          {currentUserIsLeader && ( // 리더에게만 보이는 버튼
+          {currentUserIsLeader && (
             <>
               <Button variant="secondary" icon="edit">
                 그룹 정보 수정
@@ -116,13 +115,11 @@ const GroupDetailPage = () => {
           marginBottom: "30px",
         }}
       >
-        {/* 멤버 목록 표시 (나중에 구현) */}
         <p>멤버 목록이 여기에 표시됩니다.</p>
         <ul style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
           <li>
             <span className="tag">{group.leader.nickname} (리더)</span>
           </li>
-          {/* mock members를 순회하며 표시 */}
           <li>
             <span className="tag">멤버2</span>
           </li>
@@ -159,7 +156,6 @@ const GroupDetailPage = () => {
             게시판 바로가기
           </Button>
         </Link>
-        {/* 실제로는 GroupBoard 컴포넌트 임포트 */}
       </div>
     </MainLayout>
   );
