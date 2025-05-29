@@ -1,5 +1,6 @@
 import InputField from "../common/InputField";
 import Button from "../common/Button";
+
 const AuthForm = ({
   isRegisterMode,
   email,
@@ -82,15 +83,14 @@ const AuthForm = ({
 
       <p className="auth-switch">
         {isRegisterMode ? "이미 계정이 있으신가요?" : "계정이 없으신가요?"}{" "}
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            setIsRegisterMode(!isRegisterMode); // 부모로부터 받은 함수 호출
+        <button
+          href="button"
+          onClick={() => {
+            setIsRegisterMode(!isRegisterMode);
           }}
         >
           {isRegisterMode ? "로그인" : "회원가입"}
-        </a>
+        </button>
       </p>
     </div>
   );

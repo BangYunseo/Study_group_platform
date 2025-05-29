@@ -5,10 +5,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <MainLayout>
-      {/* 텍스트와 이미지 섹션 */}
       <div className="home-hero-section">
-        {" "}
-        {/* 새로운 CSS 클래스 적용 */}
         <div className="home-text-content">
           <h1>Welcome to StudyHub!</h1>
           <h3>StudyHub에 오신 것을 환영합니다.</h3>
@@ -21,7 +18,6 @@ const HomePage = () => {
           </Link>
         </div>
         <div className="home-image-content">
-          {/* public 폴더에 넣은 이미지 경로 */}
           <img
             src="/images/study-main.png"
             alt="공부하는 사람들 사진"
@@ -30,7 +26,6 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* 다른 섹션 추가 (예: 기능 소개, 최신 스터디 목록 등) */}
       <div className="home-features-section">
         <h2>StudyHub 활동</h2>
         <div className="features-grid">
@@ -43,8 +38,8 @@ const HomePage = () => {
             <p>당신만의 학습 자료를 공유하고 필요한 자료를 찾아보세요!</p>
           </div>
           <div className="feature-item">
-            <h3>자유로운 소통</h3>
-            <p>커뮤니티 게시판에서 다른 사람들과 자유로운 만남을 가지세요!</p>
+            <h3>자유 게시판</h3>
+            <p>게시판에서 다른 사람들과 자유로운 의견을 나누세요!</p>
           </div>
         </div>
       </div>

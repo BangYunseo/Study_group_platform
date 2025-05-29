@@ -1,8 +1,6 @@
-// studygroup/client/src/data/posts.js (수정 제안)
-
 export const mockPosts = [
   {
-    id: "1", // 그대로 유지
+    id: "1",
     groupId: null,
     title: "React Hooks 사용 시 주의할 점",
     author: { id: "user-2", nickname: "나진짜개발자임" },
@@ -43,7 +41,7 @@ export const mockPosts = [
     ],
   },
   {
-    id: "2", // 그대로 유지
+    id: "2",
     groupId: null,
     title: "정보처리기사 필기 합격 후기 공유합니다!",
     author: { id: "user-4", nickname: "합격기원" },
@@ -65,8 +63,8 @@ export const mockPosts = [
     ],
   },
   {
-    id: "3", // ✅ "post-3"을 "3"으로 수정했습니다.
-    groupId: "group-1", // 특정 그룹 게시판
+    id: "3",
+    groupId: "group-1", 
     title: "[정보처리기사 스터디] 이번 주 진도 공지 (6/1 ~ 6/7)",
     author: { id: "user-1", nickname: "김철수" },
     createdAt: "2024.05.25",
