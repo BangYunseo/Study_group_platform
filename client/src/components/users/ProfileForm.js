@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import InputField from "../common/InputField";
 import Button from "../common/Button";
 
+import "./ProfileForm.css";
+
 const ProfileForm = ({ user }) => {
   const [nickname, setNickname] = useState(user.nickname);
   const [interests, setInterests] = useState(user.interests.join(", "));

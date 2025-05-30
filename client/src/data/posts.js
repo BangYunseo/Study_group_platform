@@ -93,4 +93,5 @@ export const mockPosts = [
 
 export const getPostsByGroupId = (groupId) =>
   mockPosts.filter((post) => post.groupId === groupId);
+
 export const getPostById = (id) => mockPosts.find((post) => post.id === id);

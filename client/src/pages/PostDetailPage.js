@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../components/layout/MainLayout/MainLayout";
 import Button from "../components/common/Button";
 import CommentItem from "../components/posts/CommentItem";
 import { getPostById } from "../data/posts";

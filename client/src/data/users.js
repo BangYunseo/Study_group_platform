@@ -1,12 +1,12 @@
 export const mockUsers = [
   {
-    id: "user-0",
+    id: "user-1",
     nickname: "관리자",
     email: "manager123@naver.com",
-    password: "123",
-    interests: ["해킹"],
-    intro: "ㅇㅇ",
-    profileImage: null,
+    interests: ["똥 싸기"],
+    intro: "ㅎㅇㅎㅇ",
+    profileImage:
+      "https://i.namu.wiki/i/m9Q-Z4I7QB8l2DWkn6-L1N8mYdCjlhDGlVty9DMHmGaeGvtQ-9e44gJZ3VX7o_5vPFEcD56yw2Iz670ktpRewQ.svg",
   },
   {
     id: "user-2",
