@@ -99,7 +99,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'study_group',
         'USER': 'root',
-        'PASSWORD': 'Qlalfqjsgh!23',
+        'PASSWORD': 'dldbsxo1@#',
+        #'PASSWORD': 'Qlalfqjsgh!23',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         "OPTIONS": {
