@@ -4,6 +4,7 @@ from datetime import timedelta
 import pymysql
 
 pymysql.install_as_MySQLdb()
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "changeme")
 DEBUG = True
@@ -11,39 +12,11 @@ ALLOWED_HOSTS = ["*"]
 ROOT_URLCONF = "config.urls"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-INSTALLED_APPS = [
-    "django.contrib.admin",
-    "django.contrib.auth",
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
-    # 3rd party
-    "rest_framework",
-    "rest_framework_simplejwt",
-    "django_filters",
-    # local
-    "apps.accounts",
-    "apps.groups",
-    "apps.posts",
-    "apps.comments",
-    "apps.chat",
-]
-
-MIDDLEWARE = [
-    "django.middleware.security.SecurityMiddleware",
-    "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.common.CommonMiddleware",
-    "django.middleware.csrf.CsrfViewMiddleware",
-    "django.contrib.auth.middleware.AuthenticationMiddleware",
-    "django.contrib.messages.middleware.MessageMiddleware",
-    "django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
-
+# React 빌드 파일 경로 추가
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],  
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -56,7 +29,49 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
 AUTH_USER_MODEL = "accounts.User"
+
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+
+    # 3rd party
+    "rest_framework",
+    "rest_framework_simplejwt",
+    "django_filters",
+    "corsheaders", 
+    # local
+    "apps.accounts",
+    "apps.groups",
+    "apps.posts",
+    "apps.comments",
+    "apps.chat",
+]
+
+MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",  
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]
+
+# 개발용 CORS 설정
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://sdavids.synology.me:3000",
+]
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -78,25 +93,23 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=14),
 }
 
-# ------------------
-# MySQL Configuration
-# ------------------
+# MySQL 설정
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',      # MySQL 백엔드
-        'NAME': 'study_group',                     # 위에서 만든 DB 이름
-        'USER': 'root',                         # MySQL 사용자
-        'PASSWORD': 'Qlalfqjsgh!23',                     # MySQL 비밀번호
-        'HOST': '127.0.0.1',                       # 보통은 localhost
-        'PORT': '3306',                            # 기본 포트
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'study_group',
+        'USER': 'root',
+        'PASSWORD': 'dldbsxo1@#',
+        #'PASSWORD': 'Qlalfqjsgh!23',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
         "OPTIONS": {
             'charset': 'utf8mb4',
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            # 'auth_plugin': 'mysql_native_password',
         },
-
     }
 }
 
+# 정적/미디어 파일 설정
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"
