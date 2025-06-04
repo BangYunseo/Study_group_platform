@@ -2,8 +2,10 @@ import os
 from pathlib import Path
 from datetime import timedelta
 import pymysql
+import mimetypes
 
 pymysql.install_as_MySQLdb()
+mimetypes.add_type("application/javascript", ".js", True)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "changeme")
@@ -12,11 +14,10 @@ ALLOWED_HOSTS = ["*"]
 ROOT_URLCONF = "config.urls"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# React 빌드 파일 경로 추가
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, "templates")],  
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -42,13 +43,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
-    # 3rd party
     "rest_framework",
     "rest_framework_simplejwt",
     "django_filters",
-    "corsheaders", 
-    # local
+    "corsheaders",
     "apps.accounts",
     "apps.groups",
     "apps.posts",
@@ -57,7 +55,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",  
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -67,7 +65,6 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# 개발용 CORS 설정
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://sdavids.synology.me:3000",
@@ -93,14 +90,13 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=14),
 }
 
-# MySQL 설정
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'study_group',
         'USER': 'root',
-        'PASSWORD': 'dldbsxo1@#',
         #'PASSWORD': 'Qlalfqjsgh!23',
+        'PASSWORD': 'dldbsxo1@#',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         "OPTIONS": {
@@ -110,6 +106,5 @@ DATABASES = {
     }
 }
 
-# 정적/미디어 파일 설정
 STATIC_URL = "/static/"
 MEDIA_URL = "/media/"

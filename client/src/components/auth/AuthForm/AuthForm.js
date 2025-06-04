@@ -1,99 +1,59 @@
-import InputField from "../../common/InputField";
-import Button from "../../common/Button";
+import React from 'react';
 
 const AuthForm = ({
-  isRegisterMode,
-  email,
-  setEmail,
-  password,
-  setPassword,
-  confirmPassword,
-  setConfirmPassword,
-  nickname,
-  setNickname,
-  handleAuthSubmit,
-  setIsRegisterMode,
+    isRegisterMode,
+    email,
+    setEmail,
+    password,
+    setPassword,
+    confirmPassword,
+    setConfirmPassword,
+    nickname,
+    setNickname,
+    handleAuthSubmit,
+    setIsRegisterMode,
 }) => {
-  return (
-    <div className="auth-box">
-      <h2>{isRegisterMode ? "회원가입" : "로그인"}</h2>
-      <form onSubmit={handleAuthSubmit}>
-        <InputField
-          label="이메일"
-          id="auth-email"
-          type="email"
-          placeholder="이메일 주소"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        {isRegisterMode && (
-          <InputField
-            label="닉네임"
-            id="auth-nickname"
-            type="text"
-            placeholder="사용할 닉네임"
-            value={nickname}
-            onChange={(e) => setNickname(e.target.value)}
-            required
-          />
-        )}
-        <InputField
-          label="비밀번호"
-          id="auth-password"
-          type="password"
-          placeholder="비밀번호"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        {isRegisterMode && (
-          <InputField
-            label="비밀번호 확인"
-            id="auth-confirm-password"
-            type="password"
-            placeholder="비밀번호 확인"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            required
-          />
-        )}
-        <Button type="submit" primary style={{ width: "100%" }}>
-          {isRegisterMode ? "회원가입" : "로그인"}
-        </Button>
-      </form>
+    return (
+        <div className="auth-form-container">
+            <h2>{isRegisterMode ? '회원가입' : '로그인'}</h2>
+            <form onSubmit={handleAuthSubmit}>
+                <div>
+                    <label>이메일</label>
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                </div>
 
-      <div className="social-login">
-        <p>또는 소셜 계정으로 {isRegisterMode ? "회원가입" : "로그인"}</p>
-        <Button
-          className="social google"
-          style={{ width: "100%", marginBottom: "10px" }}
-          icon="Google"
-        >
-          Google
-        </Button>
-        <Button
-          className="social kakao"
-          style={{ width: "100%" }}
-          icon="comment"
-        >
-          Kakao
-        </Button>
-      </div>
+                {isRegisterMode && (
+                    <div>
+                        <label>닉네임</label>
+                        <input type="text" value={nickname} onChange={(e) => setNickname(e.target.value)} required />
+                    </div>
+                )}
 
-      <p className="auth-switch">
-        {isRegisterMode ? "이미 계정이 있으신가요?" : "계정이 없으신가요?"}{" "}
-        <button
-          href="button"
-          onClick={() => {
-            setIsRegisterMode(!isRegisterMode);
-          }}
-        >
-          {isRegisterMode ? "로그인" : "회원가입"}
-        </button>
-      </p>
-    </div>
-  );
+                <div>
+                    <label>비밀번호</label>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                </div>
+
+                {isRegisterMode && (
+                    <div>
+                        <label>비밀번호 확인</label>
+                        <input
+                            type="password"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            required
+                        />
+                    </div>
+                )}
+
+                <button type="submit">{isRegisterMode ? '회원가입' : '로그인'}</button>
+            </form>
+
+            <button type="button" onClick={() => setIsRegisterMode(!isRegisterMode)} style={{ marginTop: '10px' }}>
+                {isRegisterMode ? '로그인 하러 가기' : '회원가입 하러 가기'}
+            </button>
+        </div>
+    );
 };
 
 export default AuthForm;

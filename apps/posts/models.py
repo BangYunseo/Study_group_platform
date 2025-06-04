@@ -3,6 +3,7 @@ from django.conf import settings
 from apps.groups.models import Group
 
 class Post(models.Model):
+    views = models.PositiveIntegerField(default=0)
     post_id = models.BigAutoField(primary_key=True, db_column='post_id')
     title = models.CharField(max_length=150, db_column='title')
     content = models.TextField(db_column='content')
